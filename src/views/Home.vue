@@ -12,7 +12,7 @@
           elegant web applications that customers love to use. Currently, I’m
           currently helping software development stay human at
           <a href="https://dencap.com/" target="_blank" rel="noreferrer">
-            DENCAP Dental Plans.
+            DENCAP Dental.
           </a>
         </p>
         <br />
