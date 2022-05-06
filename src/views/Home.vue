@@ -1,39 +1,138 @@
+<script setup>
+const projects = [
+  {
+    name: "Samurai Zero - Marketing Site",
+    url: "https://samuraizero.com",
+    icon: "fas fa-globe",
+    repo: "",
+  },
+  {
+    name: "Neo Interactive - Marketing Site",
+    url: "https://neointeractive.dev",
+    icon: "fas fa-globe",
+    repo: "",
+  },
+  {
+    name: "Healthy Michigan Dental - Marketing Site",
+    url: "https://hmidental.com",
+    icon: "fas fa-globe",
+    repo: "",
+  },
+  {
+    name: "GI Updates - Marketing Site",
+    url: "https://giupdates.tv",
+    icon: "fas fa-globe",
+    repo: "",
+  },
+  {
+    name: "Samurai Zero Codex - Marketing Site",
+    url: "https://giupdates.tv",
+    icon: "fas fa-globe",
+    repo: "",
+  },
+  {
+    name: "VIZOR Scoreboards - Side Project",
+    url: "https://usevizor.com",
+    icon: "fas fa-globe",
+    repo: "",
+  },
+  {
+    name: "Watch My Spotify - Side Project",
+    url: "https://hmidental.com",
+    icon: "fas fa-globe",
+    repo: "",
+  },
+  {
+    name: "Midnight Synth - VS Code Theme",
+    url: "https://marketplace.visualstudio.com/items?itemName=ekelley.midnight-synth",
+    icon: "fas fa-globe",
+    repo: "https://github.com/emkelley/midnight-synth",
+  },
+];
+const social = [
+  {
+    name: "Github",
+    url: "https://github.com/emkelley",
+    icon: "fab fa-github",
+  },
+  {
+    name: "Codepen",
+    url: "https://codepen.com/emkelley",
+    icon: "fab fa-codepen",
+  },
+  {
+    name: "Behance",
+    url: "https://be.net/emkelley",
+    icon: "fab fa-behance",
+  },
+  {
+    name: "Linked In",
+    url: "https://linkedin.com/in/ericmkelley",
+    icon: "fab fa-linkedin",
+  },
+  {
+    name: "Twitter",
+    url: "https://twitter.com/0NEGUYY",
+    icon: "fab fa-twitter",
+  },
+];
+</script>
 <template>
   <main
-    class="bg-slate-900 p-4 flex flex-col justify-center align-middle min-h-screen"
+    class="bg-slate-900 flex flex-col justify-center align-middle min-h-screen"
   >
     <div class="container mx-auto xl:px-36 lg:px-24 md:px-12 px-6">
-      <h1 class="text-6xl text-slate-100 py-8">
-        Hey there, I'm <span class="rainbow clip-text">Eric Kelley</span>
-      </h1>
-      <div class="mb-24">
-        <p class="text-2xl text-slate-300 leading-relaxed tracking-wide">
-          From payment processing to network management, I build powerful,
-          elegant web applications that customers love to use. Currently, I’m
-          currently helping software development stay human at
-          <a href="https://dencap.com/" target="_blank" rel="noreferrer">
-            DENCAP Dental.
-          </a>
-        </p>
-        <br />
-        <p class="text-2xl text-slate-300 leading-relaxed tracking-wide">
-          In 2018, I co-founded
-          <a
-            href="https://neointeractive.dev/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Neo Interactive
-          </a>
-          - an independent video game studio currently developing our debut
-          title,
-          <a href="https://samuraizero.com/" target="_blank" rel="noreferrer"
-            >Samurai Zero</a
-          >; a third-person arena hack-n-slash game set in the beautiful science
-          fantasy world of Edo.
-        </p>
+      <div class="">
+        <h1 class="text-6xl text-slate-100 py-8">
+          Hey there, I'm <span class="rainbow clip-text">Eric Kelley</span>
+        </h1>
+        <div class="mb-24 font-light">
+          <p class="text-2xl text-slate-300 leading-relaxed tracking-wide">
+            From payment processing to network management, I build powerful,
+            elegant web applications that customers love to use. Currently, I’m
+            currently helping software development stay human at
+            <a href="https://dencap.com/" target="_blank" rel="noreferrer">
+              DENCAP Dental.
+            </a>
+          </p>
+          <br />
+          <p class="text-2xl text-slate-300 leading-relaxed tracking-wide">
+            In 2018, I co-founded
+            <a
+              href="https://neointeractive.dev/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Neo Interactive
+            </a>
+            - an independent video game studio currently developing our debut
+            title,
+            <a href="https://samuraizero.com/" target="_blank" rel="noreferrer"
+              >Samurai Zero</a
+            >; a third-person arena hack-n-slash game set in the beautiful
+            science fantasy world of Edo.
+          </p>
+        </div>
       </div>
-      <div class="flex flex-row w-full justify-between mb-24">
+      <div class="pb-24">
+        <p
+          class="text-2xl text-slate-300 leading-relaxed tracking-wide mt-24 md:text-left text-center mb-6 font-bold"
+        >
+          Recent Projects
+        </p>
+        <div class="flex flex-row flex-wrap">
+          <router-link
+            v-for="project in projects"
+            :key="project.url"
+            :to="project.url"
+            class="xl:w-1/3 md:w-1/2 w-full p-2 text-slate-50"
+          >
+            <i class="mr-2 text-slate-300" :class="project.icon" />
+            {{ project.name }}
+          </router-link>
+        </div>
+      </div>
+      <div class="flex flex-row w-full justify-between">
         <div class="flex items-center">
           <p class="text-slate-300">
             © {{ new Date().getFullYear() }} Eric Kelley | MMXXII
@@ -41,49 +140,15 @@
         </div>
         <div class="block text-slate-300">
           <a
-            href="https://github.com/emkelley"
+            v-for="item in social"
+            :key="item.url"
+            :href="item.url"
             target="_blank"
             rel="noreferrer"
-            name="GitHub"
+            :name="item.name"
             class="transition hover:text-indigo-400"
           >
-            <i class="fab mr-8 fa-xl rainbow fa-github"></i>
-          </a>
-          <a
-            href="https://codepen.com/emkelley"
-            target="_blank"
-            rel="noreferrer"
-            name="Codepen"
-            class="transition hover:text-indigo-400"
-          >
-            <i class="fab mr-8 fa-xl rainbow fa-codepen"></i>
-          </a>
-          <a
-            href="http://be.net/emkelley"
-            target="_blank"
-            rel="noreferrer"
-            name="Behance"
-            class="transition hover:text-indigo-400"
-          >
-            <i class="fab mr-8 fa-xl rainbow fa-behance"></i>
-          </a>
-          <a
-            href="https://linkedin.com/in/ericmkelley"
-            target="_blank"
-            rel="noreferrer"
-            name="LinkedIn"
-            class="transition hover:text-indigo-400"
-          >
-            <i class="fab mr-8 fa-xl rainbow fa-linkedin"></i>
-          </a>
-          <a
-            href="https://twitter.com/0NEGUYY"
-            target="_blank"
-            rel="noreferrer"
-            name="Twitter"
-            class="transition hover:text-indigo-400"
-          >
-            <i class="fab mr-8 fa-xl rainbow fa-twitter"></i>
+            <i class="mr-8 fa-lg" :class="item.icon" />
           </a>
         </div>
       </div>
