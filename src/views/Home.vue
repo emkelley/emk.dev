@@ -38,7 +38,7 @@ const projects = [
   },
   {
     name: "Watch My Spotify - Side Project",
-    url: "https://hmidental.com",
+    url: "https://wms.emk.dev",
     icon: "fas fa-globe",
     repo: "",
   },
@@ -47,6 +47,12 @@ const projects = [
     url: "https://marketplace.visualstudio.com/items?itemName=ekelley.midnight-synth",
     icon: "fas fa-globe",
     repo: "https://github.com/emkelley/midnight-synth",
+  },
+  {
+    name: "Eric's Desktop - Side Project",
+    url: "https://desktop.emk.dev",
+    icon: "fas fa-globe",
+    repo: "",
   },
 ];
 const social = [
@@ -121,15 +127,17 @@ const social = [
           Recent Projects
         </p>
         <div class="flex flex-row flex-wrap">
-          <router-link
+          <a
             v-for="project in projects"
             :key="project.url"
-            :to="project.url"
+            :href="project.url"
+            target="_blank"
+            rel="noreferrer"
             class="xl:w-1/3 md:w-1/2 w-full p-2 text-slate-50"
           >
             <i class="mr-2 text-slate-300" :class="project.icon" />
             {{ project.name }}
-          </router-link>
+          </a>
         </div>
       </div>
       <div class="flex flex-row w-full justify-between">
