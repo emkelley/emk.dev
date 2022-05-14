@@ -19,6 +19,18 @@ const projects = [
     repo: "",
   },
   {
+    name: "Watch My Spotify - Side Project",
+    url: "https://wms.emk.dev",
+    icon: "fas fa-globe",
+    repo: "",
+  },
+  {
+    name: "0NEGUY Cinematics - Side Project",
+    url: "https://oneguy.io",
+    icon: "fas fa-globe",
+    repo: "",
+  },
+  {
     name: "GI Updates - Marketing Site",
     url: "https://giupdates.tv",
     icon: "fas fa-globe",
@@ -27,18 +39,6 @@ const projects = [
   {
     name: "Samurai Zero Codex - Marketing Site",
     url: "https://giupdates.tv",
-    icon: "fas fa-globe",
-    repo: "",
-  },
-  {
-    name: "VIZOR Scoreboards - Side Project",
-    url: "https://usevizor.com",
-    icon: "fas fa-globe",
-    repo: "",
-  },
-  {
-    name: "Watch My Spotify - Side Project",
-    url: "https://wms.emk.dev",
     icon: "fas fa-globe",
     repo: "",
   },
