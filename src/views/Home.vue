@@ -1,45 +1,33 @@
 <script setup>
 const projects = [
+  // {
+  //   name: "FanLabel - Microsite",
+  //   url: "https://play.fanlabel.com",
+  //   icon: "fak fa-fanlabel",
+  //   repo: "",
+  // },
   {
     name: "Samurai Zero - Marketing Site",
     url: "https://samuraizero.com",
-    icon: "fas fa-globe",
+    icon: "fak fa-sz-flower",
     repo: "",
   },
   {
     name: "Neo Interactive - Marketing Site",
     url: "https://neointeractive.dev",
-    icon: "fas fa-globe",
+    icon: "fak fa-ni",
     repo: "",
   },
   {
     name: "Healthy Michigan Dental - Marketing Site",
     url: "https://hmidental.com",
-    icon: "fas fa-globe",
+    icon: "fas fa-tooth",
     repo: "",
   },
   {
     name: "Watch My Spotify - Side Project",
     url: "https://wms.emk.dev",
-    icon: "fas fa-globe",
-    repo: "",
-  },
-  {
-    name: "0NEGUY Cinematics - Side Project",
-    url: "https://oneguy.io",
-    icon: "fas fa-globe",
-    repo: "",
-  },
-  {
-    name: "GI Updates - Marketing Site",
-    url: "https://giupdates.tv",
-    icon: "fas fa-globe",
-    repo: "",
-  },
-  {
-    name: "Samurai Zero Codex - Marketing Site",
-    url: "https://giupdates.tv",
-    icon: "fas fa-globe",
+    icon: "fa-brands fa-spotify",
     repo: "",
   },
   {
@@ -49,9 +37,21 @@ const projects = [
     repo: "https://github.com/emkelley/midnight-synth",
   },
   {
+    name: "0NEGUY Cinematics - Side Project",
+    url: "https://oneguy.io",
+    icon: "fak fa-og",
+    repo: "",
+  },
+  {
+    name: "GI Updates - Marketing Site",
+    url: "https://giupdates.tv",
+    icon: "fas fa-globe",
+    repo: "",
+  },
+  {
     name: "Eric's Desktop - Side Project",
     url: "https://desktop.emk.dev",
-    icon: "fas fa-globe",
+    icon: "fa-brands fa-vuejs",
     repo: "",
   },
 ];
@@ -133,9 +133,9 @@ const social = [
             :href="project.url"
             target="_blank"
             rel="noreferrer"
-            class="xl:w-1/3 md:w-1/2 w-full p-2 text-slate-50"
+            class="xl:w-1/3 md:w-1/2 w-full p-2 text-slate-50 text-lg"
           >
-            <i class="mr-2 text-slate-300" :class="project.icon" />
+            <i class="mr-2 text-slate-300 fa-lg" :class="project.icon" />
             {{ project.name }}
           </a>
         </div>

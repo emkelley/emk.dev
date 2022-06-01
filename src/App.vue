@@ -3,9 +3,6 @@
 </template>
 
 <style lang="scss">
-a {
-  @apply rainbow;
-}
 .rainbow {
   -webkit-animation: rainbow 8s ease infinite;
   animation: rainbow 8s ease infinite;
