@@ -1,11 +1,11 @@
 <script setup>
 const projects = [
-  // {
-  //   name: "FanLabel - Microsite",
-  //   url: "https://play.fanlabel.com",
-  //   icon: "fak fa-fanlabel",
-  //   repo: "",
-  // },
+  {
+    name: "FanLabel - Microsite",
+    url: "https://play.fanlabel.com",
+    icon: "fak fa-fanlabel",
+    repo: "",
+  },
   {
     name: "Samurai Zero - Marketing Site",
     url: "https://samuraizero.com",
