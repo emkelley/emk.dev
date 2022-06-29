@@ -1,8 +1,8 @@
 <script setup>
 const projects = [
   {
-    name: "FanLabel - Microsite",
-    url: "https://play.fanlabel.com",
+    name: "FanLabel Web Challenges",
+    url: "https://challenges.fanlabel.com",
     icon: "fak fa-fanlabel",
     repo: "",
   },
