@@ -87,7 +87,7 @@ const social = [
   <main
     class="bg-slate-900 flex flex-col justify-center align-middle min-h-screen"
   >
-    <div class="container mx-auto xl:px-36 lg:px-24 md:px-12 px-6">
+    <div class="container mx-auto xl:px-24 lg:px-12 md:px-6 px-3">
       <div class="">
         <h1 class="text-6xl text-slate-100 py-8">
           Hey there, I'm <span class="rainbow clip-text">Eric Kelley</span>
@@ -103,7 +103,7 @@ const social = [
           </p>
           <br />
           <p class="text-2xl text-slate-300 leading-relaxed tracking-wide">
-            In 2018, I co-founded
+            In 2019, I co-founded
             <a
               href="https://neointeractive.dev/"
               target="_blank"
@@ -117,6 +117,11 @@ const social = [
               >Samurai Zero</a
             >; a third-person arena hack-n-slash game set in the beautiful
             science fantasy world of Edo.
+          </p>
+          <br />
+          <p class="text-2xl text-slate-300 leading-relaxed tracking-wide">
+            I am available for select freelance work. If you’d like to chat
+            about your project needs, send me an email: freelance (at) emk.dev.
           </p>
         </div>
       </div>
