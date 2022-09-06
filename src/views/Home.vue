@@ -1,7 +1,13 @@
 <script setup>
 const projects = [
   {
-    name: "FanLabel Web Challenges",
+    name: "NeedAnything - Marketing Site",
+    url: "https://need-anything.netlify.app/",
+    icon: "fak fa-needanything",
+    repo: "",
+  },
+  {
+    name: "FanLabel - Web Challenges Site",
     url: "https://challenges.fanlabel.com",
     icon: "fak fa-fanlabel",
     repo: "",
@@ -22,12 +28,6 @@ const projects = [
     name: "Healthy Michigan Dental - Marketing Site",
     url: "https://hmidental.com",
     icon: "fas fa-tooth",
-    repo: "",
-  },
-  {
-    name: "Watch My Spotify - Side Project",
-    url: "https://wms.emk.dev",
-    icon: "fa-brands fa-spotify",
     repo: "",
   },
   {
