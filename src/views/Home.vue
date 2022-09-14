@@ -146,7 +146,7 @@ const social = [
       <div class="flex flex-row w-full justify-between">
         <div class="flex items-center">
           <p class="text-slate-300">
-            © {{ new Date().getFullYear() }} Eric Kelley | MMXVI Live the Fourth
+            © {{ new Date().getFullYear() }} Eric Kelley | MMXII Live the Fourth
           </p>
         </div>
         <div class="block text-slate-300">
