@@ -258,10 +258,7 @@
                           >
                             I use Notion not only as my digital brain for any
                             info or side projects I'm working on, but also as
-                            the general knowledge base for my company.Notion is
-                            incredibly flexible. I use it for everything from
-                            tracking our finances to keeping track of our
-                            company's social media accounts.
+                            the general knowledge base for my company.
                           </p>
                         </li>
                         <li class="group relative flex flex-col items-start">
