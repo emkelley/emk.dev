@@ -93,8 +93,8 @@ const social = [
         <div class="mb-24 font-light">
           <p class="text-2xl text-slate-300 leading-relaxed tracking-wide">
             From payment processing to network management, I build powerful,
-            elegant web applications that customers love to use. Currently, I’m
-            currently helping software development stay human at
+            elegant web applications that customers love to use. I’m currently
+            helping software development stay human at
             <a href="https://dencap.com/" target="_blank" rel="noreferrer">
               DENCAP Dental.
             </a>
