@@ -81,6 +81,11 @@ const social = [
     url: "https://twitter.com/0NEGUYY",
     icon: "fab fa-twitter",
   },
+  {
+    name: "Mastodon",
+    url: "https://hachyderm.io/@emk",
+    icon: "fab fa-mastodon",
+  },
 ];
 </script>
 <template>
@@ -155,7 +160,7 @@ const social = [
             :key="item.url"
             :href="item.url"
             target="_blank"
-            rel="noreferrer"
+            rel="me"
             :name="item.name"
             class="transition hover:text-indigo-400"
           >
