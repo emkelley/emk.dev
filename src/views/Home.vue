@@ -2,7 +2,7 @@
 const projects = [
   {
     name: "NeedAnything - Marketing Site",
-    url: "https://need-anything.netlify.app/",
+    url: "https://needanything.com/",
     icon: "fak fa-needanything",
     repo: "",
   },
@@ -72,7 +72,7 @@ const social = [
     icon: "fab fa-behance",
   },
   {
-    name: "Linked In",
+    name: "LinkedIn",
     url: "https://linkedin.com/in/ericmkelley",
     icon: "fab fa-linkedin",
   },
@@ -100,8 +100,12 @@ const social = [
             From payment processing to network management, I build powerful,
             elegant web applications that customers love to use. I’m currently
             helping software development stay human at
-            <a href="https://dencap.com/" target="_blank" rel="noreferrer">
-              DENCAP Dental.
+            <a
+              href="https://studiocadenza.co/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Studio Cadenza.
             </a>
           </p>
           <br />
