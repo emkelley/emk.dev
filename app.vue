@@ -1,15 +1,25 @@
-<script setup lang="ts">
-import FloatingNav from "./components/FloatingNav.vue";
-</script>
-
 <template>
-  <FloatingNav />
-  <router-view />
+  <main>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </main>
 </template>
+<script setup lang="ts">
+useHead({
+  title: "Oikaze - Tailwind components powered by GPT-4",
+});
+// const { $sentryCaptureException } = useNuxtApp();
+// onMounted(() => {
+//   //@ts-ignore
+//   $sentryCaptureException("Test exception");
+// });
+</script>
 
 <style lang="scss">
 body {
   @apply bg-slate-900;
+  font-family: "Space Grotesk", sans-serif;
 }
 .rainbow {
   -webkit-animation: rainbow 8s ease infinite;

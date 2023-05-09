@@ -1,4 +1,10 @@
+node_modules
+*.log*
+.nuxt
+.nitro
+.cache
+.output
 .env
-.env.local
-/build
-/node_modules
+dist
+.DS_Store
+old

@@ -1,21 +1,22 @@
 {
-  "name": "emk.dev",
-  "version": "2.0.0",
+  "name": "nuxt-app",
+  "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
-  },
-  "dependencies": {
-    "vue": "^3.2.38",
-    "vue-router": "^4"
+    "build": "nuxt build",
+    "dev": "nuxt dev -o",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^1.9.3",
-    "autoprefixer": "^10.4.0",
-    "postcss": "^8.3.11",
-    "sass": "^1.43.4",
-    "tailwindcss": "^3.0.24",
-    "vite": "^2.6.4"
+    "@nuxt/devtools": "^0.4.6",
+    "@nuxtjs/google-fonts": "^3.0.0-1",
+    "@nuxtjs/tailwindcss": "^6.6.7",
+    "@types/node": "^18",
+    "nuxt": "^3.4.3",
+    "nuxt-icon": "^0.4.0"
+  },
+  "dependencies": {
+    "sass": "^1.62.1"
   }
 }
