@@ -1,4 +1,7 @@
 <script setup lang="ts">
+definePageMeta({
+  layout: "default",
+});
 const projects = [
   {
     name: "0NEGUY Cinematics - SaaS",
@@ -59,32 +62,27 @@ const social = [
   {
     name: "Github",
     url: "https://github.com/emkelley",
-    icon: "fab fa-github",
+    icon: "skill-icons:github-dark",
   },
   {
     name: "Codepen",
     url: "https://codepen.com/emkelley",
-    icon: "fab fa-codepen",
-  },
-  {
-    name: "Behance",
-    url: "https://be.net/emkelley",
-    icon: "fab fa-behance",
+    icon: "skill-icons:codepen-dark",
   },
   {
     name: "LinkedIn",
     url: "https://linkedin.com/in/ericmkelley",
-    icon: "fab fa-linkedin",
+    icon: "skill-icons:linkedin",
   },
   {
     name: "Twitter",
     url: "https://twitter.com/0NEGUYY",
-    icon: "fab fa-twitter",
+    icon: "skill-icons:twitter",
   },
   {
-    name: "Mastodon",
-    url: "https://hachyderm.io/@emk",
-    icon: "fab fa-mastodon",
+    name: "Email",
+    url: "mailto:contact@emk.dev",
+    icon: "ic:twotone-alternate-email",
   },
 ];
 </script>
@@ -127,8 +125,8 @@ const social = [
           </p>
           <br />
           <p class="text-2xl text-slate-300 leading-relaxed tracking-wide">
-            I am available for select freelance work. If you’d like to chat
-            about your project needs, send me an email: freelance (at) emk.dev.
+            I am typically open to select freelance work, although I am not
+            currently accepting new projects.
           </p>
         </div>
       </div>
@@ -158,7 +156,7 @@ const social = [
             © {{ new Date().getFullYear() }} Eric Kelley | MMXII Live the Fourth
           </p>
         </div>
-        <div class="block text-slate-300">
+        <div class="flex gap-4 text-slate-300">
           <a
             v-for="item in social"
             :key="item.url"
@@ -166,9 +164,8 @@ const social = [
             target="_blank"
             rel="me"
             :name="item.name"
-            class="transition hover:text-indigo-400"
           >
-            <i class="mr-8 fa-lg" :class="item.icon" />
+            <Icon :name="item.icon" class="" />
           </a>
         </div>
       </div>
