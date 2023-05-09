@@ -2,13 +2,14 @@
   "name": "nuxt-app",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
+    "build": "nuxt build --modern=client",
     "dev": "nuxt dev -o",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxt/content": "^2.6.0",
     "@nuxt/devtools": "^0.4.6",
     "@nuxtjs/google-fonts": "^3.0.0-1",
     "@nuxtjs/tailwindcss": "^6.6.7",

@@ -52,7 +52,7 @@ const projects = [
     repo: "",
   },
   {
-    name: "Personal Site",
+    name: "Personal Site - You're looking at it",
     url: "https://desktop.emk.dev",
     icon: "skill-icons:nuxtjs-dark",
     repo: "",
