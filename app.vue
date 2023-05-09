@@ -16,11 +16,6 @@ useHead({
     },
   ],
 });
-// const { $sentryCaptureException } = useNuxtApp();
-// onMounted(() => {
-//   //@ts-ignore
-//   $sentryCaptureException("Test exception");
-// });
 </script>
 
 <style lang="scss">
