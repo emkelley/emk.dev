@@ -7,7 +7,14 @@
 </template>
 <script setup lang="ts">
 useHead({
-  title: "Oikaze - Tailwind components powered by GPT-4",
+  title: "Eric Kelley - Full-Stack Software Developer",
+  meta: [
+    {
+      name: "description",
+      content:
+        "From payment processing to network management, I build powerful, elegant web applications that customers love to use. Currently, I’m currently helping software development stay human at Studio Cadenza.",
+    },
+  ],
 });
 // const { $sentryCaptureException } = useNuxtApp();
 // onMounted(() => {
