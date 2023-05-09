@@ -53,7 +53,7 @@ const projects = [
   },
   {
     name: "Personal Site - You're looking at it",
-    url: "https://desktop.emk.dev",
+    url: "https://github.com/emkelley/emk.dev",
     icon: "skill-icons:nuxtjs-dark",
     repo: "",
   },
