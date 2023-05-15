@@ -1,8 +1,22 @@
 <script setup lang="ts">
-definePageMeta({
-  layout: "default",
+useSeoMeta({
+  title: "Eric Kelley - Full-Stack Software Developer",
+  description:
+    "From payment processing to network management, I build powerful, elegant web applications that customers love to use. Currently, I’m currently helping software development stay human at Studio Cadenza.",
 });
+
+defineOgImageStatic({
+  component: "OgImage",
+  backgroundColor: "bg-gradient-to-br from-blue-950 to-blue-800",
+});
+
 const projects = [
+  {
+    name: "Mick Brege - Personal Site",
+    url: "https://brege.netlify.app",
+    icon: "skill-icons:nuxtjs-dark",
+    repo: "",
+  },
   {
     name: "0NEGUY Cinematics - SaaS",
     url: "https://oneguy.io",
@@ -12,7 +26,7 @@ const projects = [
   {
     name: "NeedAnything - Marketing Site",
     url: "https://needanything.com/",
-    icon: "skill-icons:nuxtjs-dark",
+    icon: "skill-icons:vuejs-dark",
     repo: "",
   },
   {
@@ -58,6 +72,7 @@ const projects = [
     repo: "",
   },
 ];
+
 const social = [
   {
     name: "Github",

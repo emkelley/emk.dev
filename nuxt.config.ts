@@ -3,9 +3,10 @@ export default defineNuxtConfig({
   modules: [
     "@nuxt/devtools",
     "@nuxtjs/tailwindcss",
-    "nuxt-icon",
     "@nuxtjs/google-fonts",
     "@nuxt/content",
+    "nuxt-og-image",
+    "nuxt-icon",
   ],
   googleFonts: {
     families: {
