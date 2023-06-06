@@ -19,6 +19,8 @@ const loadBlogContent = async () => {
     .where({ _path: route.path })
     .findOne();
 
+  console.log(articles);
+
   blogContent.value = articles;
 };
 
@@ -31,7 +33,7 @@ const toc = computed(() => {
   const items = blogContent.value.excerpt?.children;
   if (!items) return [];
   const toc: any[] = [];
-  const tags = ["h2", "h3", "h4", "h5", "h6"];
+  const tags = ["h1", "h2", "h3", "h4", "h5", "h6"];
   items.forEach((item: any) => {
     if (tags.includes(item.tag)) {
       toc.push({
@@ -41,6 +43,7 @@ const toc = computed(() => {
       });
     }
   });
+
   return toc;
 });
 </script>
@@ -53,9 +56,9 @@ const toc = computed(() => {
       >
         <div
           v-if="blogContent"
-          class="w-[300px] p-5 sticky top-3 border rounded-md bg-black text-slate-300 hidden lg:block"
+          class="w-[300px] p-5 sticky top-8 rounded-md bg-[#0b111e] text-slate-300 hidden lg:block"
         >
-          <h2 class="text-sm font-bold mb-4">Table Of Contents</h2>
+          <h2 class="text-sm font-bold mb-4 uppercase">Table Of Contents</h2>
           <ul class="space-y-2">
             <template v-for="(t, k) in toc" :key="`toc-item-${k}`">
               <li>
@@ -66,8 +69,9 @@ const toc = computed(() => {
                   }"
                   class="capitalize"
                   :to="`#${t.id}`"
-                  >{{ t }}</NuxtLink
                 >
+                  {{ t.title }}
+                </NuxtLink>
               </li>
             </template>
           </ul>
@@ -85,5 +89,3 @@ const toc = computed(() => {
     </main>
   </div>
 </template>
-
-<style lang="scss" scoped></style>
