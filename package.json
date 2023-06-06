@@ -19,6 +19,7 @@
     "nuxt-og-image": "^2.0.0-beta.40"
   },
   "dependencies": {
+    "@vueuse/core": "^10.1.2",
     "sass": "^1.62.1"
   }
 }
