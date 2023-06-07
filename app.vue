@@ -2,6 +2,7 @@
   <main>
     <NuxtLayout>
       <NuxtPage />
+      <Footer />
     </NuxtLayout>
   </main>
 </template>
@@ -80,5 +81,22 @@ body {
   background-color: #3d5285;
   border-radius: 2px;
   border: 0px ridge #d0a4a4;
+}
+.rainbow-text {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-pink-600;
+}
+.rainbow-bg {
+  @apply bg-gradient-to-r from-blue-500 to-pink-600;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.3s ease-in-out;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: scale(0.99);
 }
 </style>
