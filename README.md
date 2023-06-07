@@ -1,2 +1,3 @@
 # Source code for my personal website emk.dev
-![image](https://user-images.githubusercontent.com/11874169/236974679-a03826b1-4406-4e78-8eaf-67e2e59f1431.jpg)
+
+![chrome_KfgxWQGSe6](https://github.com/emkelley/emk.dev/assets/11874169/6b8b39c8-dedc-4a71-995e-21fe4e060660)
