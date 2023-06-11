@@ -50,41 +50,19 @@ const toc = computed(() => {
 
 <template>
   <main>
-    <div
-      class="bg-[#0139b3] flex flex-col gap-4 items-center justify-center rounded-b-3xl mb-12 py-12"
-    >
-      <h1
-        class="text-5xl max-w-4xl px-8 mx-auto font-bold text-white text-center"
-      >
-        {{ blogContent.title }}
-      </h1>
-      <p class="text-slate-200 text-center">
-        Published:
-        {{
-          new Date(blogContent.createdAt).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "numeric",
-            day: "numeric",
-          })
-        }}
-      </p>
-      <div v-if="blogContent.tags" class="flex gap-2 items-center">
-        <nuxt-link
-          v-for="tag in blogContent.tags"
-          class="text-white bg-blue-500 py-1 flex items-center justify-center px-4 rounded-full text-sm z-50"
-          :to="`/articles/tags/${tag}`"
-        >
-          {{ tag }}
-        </nuxt-link>
-      </div>
-    </div>
+    <ArticleHero
+      v-if="blogContent"
+      :title="blogContent.title"
+      :publishDate="blogContent.createdAt"
+      :tags="blogContent.tags"
+    />
 
     <article
       class="mx-auto max-w-7xl relative grid grid-cols-12 gap-4 items-start text-slate-300"
     >
       <div
         v-if="blogContent"
-        class="col-span-12 md:col-span-3 p-5 sticky top-8 rounded-md bg-[#0b111e] text-slate-300 hidden lg:block"
+        class="col-span-12 md:col-span-3 p-5 sticky top-24 rounded-md bg-[#0b111e] text-slate-300 hidden lg:block"
       >
         <h2 class="font-bold mb-4 uppercase">Table Of Contents</h2>
         <ul class="space-y-2">
@@ -113,6 +91,11 @@ const toc = computed(() => {
               </template>
             </ContentRenderer>
           </div>
+          <ArticleTags
+            v-if="blogContent"
+            :tags="blogContent.tags"
+            theme="blue"
+          />
         </ClientOnly>
       </div>
     </article>

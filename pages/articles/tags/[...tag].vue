@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="mt-12">
     <main>
       <div
-        class="bg-[#0139b3] flex flex-col gap-4 items-center justify-center rounded-b-3xl mb-12 py-24 text-white text-3xl font-bold"
+        class="bg-[#0139b3] flex flex-col gap-4 items-center justify-center rounded-b-3xl my-12 py-24 text-white text-3xl font-bold"
       >
-        Articles matching tag: {{ route.params.tag[0] }}
+        <p>Tags: {{ route.params.tag[0] }}</p>
       </div>
       <div
         v-if="results.length >= 1"

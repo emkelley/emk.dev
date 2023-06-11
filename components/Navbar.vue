@@ -4,10 +4,12 @@ const route = useRoute();
 const active_route = computed(() => route.path);
 </script>
 <template>
-  <nav class="w-full py-4 flex items-center justify-between px-12">
-    <nuxt-link to="/"
-      ><img src="/img/logo_long_white.svg" alt="" class="h-8"
-    /></nuxt-link>
+  <nav
+    class="w-full py-4 flex items-center justify-between px-12 sticky top-0 bg-[#0f172a]/60 backdrop-blur-md z-[999] rounded-b-xl overflow-hidden"
+  >
+    <nuxt-link to="/">
+      <img src="/img/logo_long_white.svg" alt="" class="h-8" />
+    </nuxt-link>
     <div class="bg-[#1c2b50] text-white rounded-md shadow-md p-3 flex gap-6">
       <nuxt-link to="/" :class="active_route === '/' ? 'nav_active' : ''">
         Home

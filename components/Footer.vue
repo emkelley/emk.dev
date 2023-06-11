@@ -1,28 +1,6 @@
-<template>
-  <div
-    class="flex flex-row w-full justify-between mx-auto max-w-7xl pb-6 pt-12"
-  >
-    <div class="flex items-center">
-      <p class="text-slate-300">
-        © {{ new Date().getFullYear() }} Eric Kelley | MMXII Live the Fourth
-      </p>
-    </div>
-    <div class="flex gap-4 text-slate-300">
-      <a
-        v-for="item in social"
-        :key="item.url"
-        :href="item.url"
-        target="_blank"
-        rel="me"
-        :name="item.name"
-      >
-        <Icon :name="item.icon" class="" />
-      </a>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
+import axios from "axios";
+
 const social = [
   {
     name: "Github",
@@ -51,5 +29,28 @@ const social = [
   },
 ];
 </script>
+<template>
+  <footer
+    class="flex flex-row w-full justify-between items-center mx-auto max-w-7xl pb-6 pt-12 text-slate-300"
+  >
+    <div class="flex items-center justify-center">
+      <p class="text-xs">
+        Eric Kelley © {{ new Date().getFullYear() }} | MMXII Live the Fourth
+      </p>
+    </div>
+    <div class="flex gap-4 text-slate-300 items-center justify-center">
+      <a
+        v-for="item in social"
+        :key="item.url"
+        :href="item.url"
+        target="_blank"
+        rel="me"
+        :name="item.name"
+      >
+        <Icon :name="item.icon" class="" />
+      </a>
+    </div>
+  </footer>
+</template>
 
 <style scoped></style>

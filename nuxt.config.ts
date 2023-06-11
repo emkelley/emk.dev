@@ -46,4 +46,14 @@ export default defineNuxtConfig({
       theme: "dracula-soft",
     },
   },
+  runtimeConfig: {
+    // Private keys are only available on the server
+    spotifyClient: process.env.SPOTIFY_CLIENT,
+    spotifySecret: process.env.SPOTIFY_SECRET,
+    spotifyRefreshToken: process.env.SPOTIFY_REFRESH,
+    spotifyAccessToken: process.env.SPOTIFY_ACCESS,
+
+    // Public keys that are exposed to the client
+    public: {},
+  },
 });

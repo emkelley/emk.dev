@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <IslandNav />
+  <section>
+    <Navbar />
     <slot />
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts"></script>
