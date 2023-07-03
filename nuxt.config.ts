@@ -5,10 +5,10 @@ export default defineNuxtConfig({
     head: {
       script: [
         {
+          src: "https://cdn.usefathom.com/script.js",
           type: "text/javascript",
-          innerHTML: `
-                <script src="https://cdn.usefathom.com/script.js" data-site="YRVLFDYM" defer></script>
-          `,
+          defer: true,
+          "data-site": "YRVLFDYM",
         },
       ],
     },
