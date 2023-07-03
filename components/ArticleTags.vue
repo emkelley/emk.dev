@@ -1,19 +1,8 @@
 <script setup lang="ts">
-defineProps({
-  link: {
-    type: String,
-    required: true,
-  },
-  tags: {
-    type: Array,
-    required: true,
-  },
-  theme: {
-    type: String,
-    required: false,
-    default: "dark",
-  },
-});
+defineProps<{
+  tags: string[];
+  theme: string;
+}>();
 </script>
 
 <template>
@@ -21,7 +10,7 @@ defineProps({
     <nuxt-link
       v-for="tag in tags"
       :key="tag"
-      :class="theme"
+      :class="theme ? theme : 'dark'"
       class="text-white bg-gradient-to-tr py-1 flex items-center justify-center px-4 rounded-md text-sm z-50 hover:cursor-pointer hover:bg-red-500"
       :to="`/articles/tags/${tag}`"
     >

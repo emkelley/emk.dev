@@ -76,10 +76,15 @@ useHead({
   title: "Articles - Eric Kelley - Full-Stack Software Developer",
 });
 
+const dateify = (date: string) => new Date(date).getMilliseconds();
+
 const loadBlogContent = async () => {
   const articles = await queryContent("articles")
     .only(["_path", "title", "description", "tags", "createdAt"])
     .find();
+
+  //sort articles by createdAt date string
+  articles.sort((a, b) => dateify(b.createdAt) - dateify(a.createdAt));
 
   blogContent.value = articles;
 };

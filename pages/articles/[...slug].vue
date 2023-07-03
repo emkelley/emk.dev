@@ -62,9 +62,9 @@ const toc = computed(() => {
     >
       <div
         v-if="blogContent"
-        class="col-span-12 md:col-span-3 p-5 sticky top-24 rounded-md bg-[#0b111e] text-slate-300 hidden lg:block"
+        class="col-span-12 md:col-span-3 p-5 sticky top-24 rounded-md bg-[#0b111e] text-slate-400 hidden lg:block"
       >
-        <h2 class="font-bold mb-4 uppercase">Table Of Contents</h2>
+        <h2 class="font-bold mb-4 text-lg text-slate-200">Table Of Contents</h2>
         <ul class="space-y-2">
           <template v-for="(t, k) in toc" :key="`toc-item-${k}`">
             <li>
@@ -73,7 +73,7 @@ const toc = computed(() => {
                   'text-sm ml-4': t.depth == 2,
                   'text-[13px] ml-6': t.depth > 2,
                 }"
-                class="capitalize"
+                class="capitalize font-semibold hover:text-blue-500 duration-100"
                 :to="`#${t.id}`"
               >
                 {{ t.title }}
@@ -82,7 +82,7 @@ const toc = computed(() => {
           </template>
         </ul>
       </div>
-      <div class="px-6 col-span-12 md:col-span-9">
+      <div class="px-6 col-span-12 md:col-span-9 mt-0">
         <ClientOnly>
           <div class="prose">
             <ContentRenderer class="prose" :value="blogContent">
@@ -101,3 +101,9 @@ const toc = computed(() => {
     </article>
   </main>
 </template>
+
+<style scoped>
+article {
+  font-family: "Inter", sans-serif;
+}
+</style>

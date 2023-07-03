@@ -3,7 +3,7 @@
     :id="id"
     @mouseover="isHovering = true"
     @mouseleave="isHovering = false"
-    class="flex items-center text-blue-400"
+    class="flex items-center text-blue-200"
   >
     <a v-if="id && generate" :href="`#${id}`">
       <slot />
@@ -28,7 +28,10 @@ const generate =
 
 <style lang="scss" scoped>
 h2 {
-  @apply text-4xl font-bold mb-4 mt-20;
+  @apply text-3xl font-bold mb-4 mt-20;
+  &:first-of-type {
+    margin-top: 0;
+  }
 }
 .v-enter-active,
 .v-leave-active {
