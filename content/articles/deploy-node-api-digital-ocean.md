@@ -6,11 +6,9 @@ updatedAt: 2023-07-03
 tags: ['hosting', 'api', 'express', 'nodejs', 'digital-ocean']
 ---
 
-## Getting Started
-At the top of the page, you should see a green Create button. Click on that and then click the Droplets option.
 
 ## Creating a Droplet
-I'm not going to go too in-depth in this section, but some general guidelines to follow when creating your Droplet:
+I'm not going to go too in-depth in this section, but some general guidelines to follow when creating your Droplet on Digital Ocean. Log into the dashboard and click on the green Create button in the top right.
 1. Pick a region that is geographically close to to your users. For example if your users primarily live in Germany, pick the Frankfurt region instead of something like San Francisco.
 2. A general rule is that you should pick the newest Ubuntu LTS available unless your app require features found in non-LTS releases.
 3. Unless you are anticipating a lot of traffic, the $6/mo Regular should be fine to start. If you plan to run multiple apps off of the same Droplet, consider bumping up to the $12/mo Regular option.
