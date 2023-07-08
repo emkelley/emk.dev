@@ -18,9 +18,9 @@ const social = [
     icon: "skill-icons:linkedin",
   },
   {
-    name: "Twitter",
-    url: "https://twitter.com/0NEGUYY",
-    icon: "skill-icons:twitter",
+    name: "Threads",
+    url: "https://www.threads.net/@mr.erickelley",
+    icon: "fluent-emoji-high-contrast:thread",
   },
   {
     name: "Email",
