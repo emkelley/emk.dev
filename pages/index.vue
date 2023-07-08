@@ -75,9 +75,9 @@ const projects = [
 </script>
 <template>
   <main class="flex flex-col justify-center align-middle">
-    <div class="container mx-auto xl:px-24 lg:px-12 md:px-6 md: mt-24 px-3">
+    <div class="container mx-auto xl:px-24 lg:px-12 md:px-6 md:mt-24 px-3">
       <div class="">
-        <h1 class="text-6xl text-slate-100 py-8">
+        <h1 class="text-6xl text-slate-100 py-8 text-center md:text-left">
           Hey there, I'm <span class="rainbow clip-text">Eric Kelley</span>
         </h1>
         <div class="mb-24 font-light">

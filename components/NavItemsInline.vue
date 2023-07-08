@@ -5,23 +5,12 @@ const active_route = computed(() => route.path);
 </script>
 <template>
   <nav
-    class="w-full py-4 flex items-center justify-center md:justify-between px-4 md:px-12 sticky top-0 bg-[#0f172a]/60 backdrop-blur-md z-[999] rounded-b-xl overflow-hidden"
+    class="w-full py-4 flex items-center justify-center px-12 sticky top-0 bg-[#0f172a]/60 backdrop-blur-md z-[999] rounded-b-xl overflow-hidden"
   >
-    <nuxt-link to="/">
-      <img src="/img/logo_long_white.svg" alt="" class="h-8" />
-    </nuxt-link>
-    <div
-      class="bg-[#1c2b50] hidden sm:flex text-white rounded-md shadow-md p-3 gap-6"
-    >
+    <div class="bg-[#1c2b50] flex text-white rounded-md shadow-md p-3 gap-6">
       <nuxt-link to="/" :class="active_route === '/' ? 'nav_active' : ''">
         Home
       </nuxt-link>
-      <!-- <nuxt-link
-        to="/projects"
-        :class="active_route === '/projects' ? 'nav_active' : ''"
-      >
-        Projects
-      </nuxt-link> -->
       <nuxt-link
         to="/articles"
         :class="active_route.includes('/articles') ? 'nav_active' : ''"

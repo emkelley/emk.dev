@@ -31,7 +31,7 @@ const social = [
 </script>
 <template>
   <footer
-    class="flex flex-row w-full justify-between items-center mx-auto max-w-7xl pb-6 pt-12 text-slate-300"
+    class="flex flex-row w-full justify-between items-center mx-auto max-w-7xl pb-6 pt-12 px-4 text-slate-300"
   >
     <div class="flex items-center justify-center">
       <p class="text-xs">
