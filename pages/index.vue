@@ -83,7 +83,9 @@ const projects = [
           Hey there, I'm <span class="rainbow clip-text">Eric Kelley</span>
         </h1>
         <div class="mb-24 font-light">
-          <p class="text-2xl text-slate-300 leading-relaxed tracking-wide">
+          <p
+            class="text-xl md:text-2xl text-slate-300 leading-relaxed tracking-wide"
+          >
             From payment processing to network management, I build powerful,
             elegant web applications that customers love to use. I’m currently
             helping software development stay human at
@@ -96,7 +98,9 @@ const projects = [
             </a>
           </p>
           <br />
-          <p class="text-2xl text-slate-300 leading-relaxed tracking-wide">
+          <p
+            class="text-xl md:text-2xl text-slate-300 leading-relaxed tracking-wide"
+          >
             In 2019, I co-founded
             <a
               href="https://neointeractive.dev/"
