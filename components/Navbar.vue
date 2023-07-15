@@ -34,6 +34,9 @@ const active_route = computed(() => route.path);
       >
         Uses
       </nuxt-link>
+      <a href="https://tv.emk.dev/" target="_blank">
+        TV <Icon name="ion:tv-outline" class="ml-2" />
+      </a>
       <a href="https://ek-webtools.netlify.app/" target="_blank">
         Web Tools <Icon name="ic:round-launch" class="ml-2" />
       </a>

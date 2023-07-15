@@ -1,7 +1,6 @@
 <template>
   <section>
     <Navbar />
-    <NavItemsInline />
     <slot />
   </section>
 </template>
