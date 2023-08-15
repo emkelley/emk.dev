@@ -98,25 +98,6 @@ const projects = [
             </a>
           </p>
           <br />
-          <p
-            class="text-xl md:text-2xl text-slate-300 leading-relaxed tracking-wide"
-          >
-            In 2019, I co-founded
-            <a
-              href="https://neointeractive.dev/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Neo Interactive
-            </a>
-            - an independent video game studio currently developing our debut
-            title,
-            <a href="https://samuraizero.com/" target="_blank" rel="noreferrer"
-              >Samurai Zero</a
-            >; a third-person arena hack-n-slash game set in the beautiful
-            science fantasy world of Edo.
-          </p>
-          <br />
           <p class="text-2xl text-slate-300 leading-relaxed tracking-wide">
             I am typically open to select freelance work, although I am not
             currently accepting new projects.
