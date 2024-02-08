@@ -12,6 +12,18 @@ defineOgImageStatic({
 
 const projects = [
   {
+    name: "TopThis! - iOS & Android App",
+    url: "https://topthis.com",
+    icon: "ion:logo-ionic",
+    repo: "",
+  },
+  {
+    name: "TopThis! - Marketing Site",
+    url: "https://topthis.com",
+    icon: "skill-icons:nuxtjs-dark",
+    repo: "",
+  },
+  {
     name: "Mick Brege - Personal Site",
     url: "https://brege.netlify.app",
     icon: "skill-icons:nuxtjs-dark",
@@ -77,30 +89,24 @@ const projects = [
   <main class="flex flex-col justify-center align-middle">
     <div class="container mx-auto xl:px-24 lg:px-12 md:px-6 md:mt-24 px-3">
       <div class="">
-        <h1
-          class="text-4xl md:text-6xl text-slate-100 py-8 text-center md:text-left"
-        >
+        <h1 class="text-4xl md:text-6xl text-slate-100 py-8 text-center md:text-left">
           Hey there, I'm <span class="rainbow clip-text">Eric Kelley</span>
         </h1>
         <div class="mb-24 font-light">
-          <p
-            class="text-xl md:text-2xl text-slate-300 leading-relaxed tracking-wide"
-          >
-            From payment processing to network management, I build powerful,
-            elegant web applications that customers love to use. I’m currently
-            helping software development stay human at
-            <a
-              href="https://studiocadenza.co/"
-              target="_blank"
-              rel="noreferrer"
+          <p class="text-xl md:text-2xl text-slate-300 leading-relaxed tracking-wide">
+            From payment processing to network management, I build powerful, elegant web
+            applications that customers love to use. I’m currently helping software development stay
+            human at
+            <a href="https://studiocadenza.co/" class="px-0" target="_blank" rel="noreferrer">
+              Studio Cadenza</a
             >
-              Studio Cadenza.
-            </a>
+            and leading the development of
+            <a href="https://topthis.com/" target="_blank" rel="noreferrer"> TopThis!</a>.
           </p>
           <br />
           <p class="text-2xl text-slate-300 leading-relaxed tracking-wide">
-            I am typically open to select freelance work, although I am not
-            currently accepting new projects.
+            I am typically open to select freelance work, although I am not currently accepting new
+            projects.
           </p>
         </div>
       </div>
@@ -108,7 +114,7 @@ const projects = [
         <p
           class="text-2xl text-slate-300 leading-relaxed tracking-wide mt-24 md:text-left text-center mb-6 font-bold"
         >
-          Recent Projects
+          What I've been up to:
         </p>
         <div class="flex flex-row flex-wrap">
           <a
