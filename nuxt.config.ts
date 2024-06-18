@@ -5,10 +5,10 @@ export default defineNuxtConfig({
     head: {
       script: [
         {
-          src: "https://cdn.usefathom.com/script.js",
+          src: "https://plausible.emk.dev/script.js",
           type: "text/javascript",
           defer: true,
-          "data-site": "YRVLFDYM",
+          "data-domain": "plausible.emk.dev",
         },
       ],
     },
