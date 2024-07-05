@@ -1,10 +1,10 @@
 export const projects = [
-  {
-    name: "TopThis! - iOS & Android App",
-    url: "https://topthis.com",
-    icon: "ion:logo-ionic",
-    repo: "",
-  },
+  // {
+  //   name: "TopThis! - iOS & Android App",
+  //   url: "https://topthis.com",
+  //   icon: "ion:logo-ionic",
+  //   repo: "",
+  // },
   {
     name: "TopThis! - Marketing Site",
     url: "https://topthis.com",

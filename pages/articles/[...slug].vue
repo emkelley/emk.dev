@@ -15,9 +15,7 @@ useHead({
 });
 
 const loadBlogContent = async () => {
-  const articles = await queryContent("articles")
-    .where({ _path: route.path })
-    .findOne();
+  const articles = await queryContent("articles").where({ _path: route.path }).findOne();
 
   console.log(articles);
 
@@ -57,9 +55,7 @@ const toc = computed(() => {
       :tags="blogContent.tags"
     />
 
-    <article
-      class="mx-auto max-w-7xl relative grid grid-cols-12 gap-4 items-start text-slate-300"
-    >
+    <article class="mx-auto max-w-7xl relative grid grid-cols-12 gap-4 items-start text-slate-300">
       <div
         v-if="blogContent"
         class="col-span-12 md:col-span-3 p-5 sticky top-24 rounded-md bg-[#0b111e] text-slate-400 hidden lg:block"
@@ -82,20 +78,16 @@ const toc = computed(() => {
           </template>
         </ul>
       </div>
-      <div class="px-6 col-span-12 md:col-span-9 mt-0">
+      <div class="px-6 col-span-12 md:col-span-9 mt-0 pb-96">
         <ClientOnly>
-          <div class="prose">
+          <div class="prose mb-24">
             <ContentRenderer class="prose" :value="blogContent">
               <template #empty>
                 <p class="text-lg text-white">No content found.</p>
               </template>
             </ContentRenderer>
           </div>
-          <ArticleTags
-            v-if="blogContent"
-            :tags="blogContent.tags"
-            theme="blue"
-          />
+          <ArticleTags v-if="blogContent" :tags="blogContent.tags" theme="blue" />
         </ClientOnly>
       </div>
     </article>
