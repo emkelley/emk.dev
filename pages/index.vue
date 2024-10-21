@@ -28,7 +28,7 @@ defineOgImageStatic({
               Studio Cadenza</a
             >
             and leading the development of
-            <a href="https://topthis.com/" target="_blank" rel="noreferrer"> TopThis!</a>.
+            <a href="https://sportscaster.com/" target="_blank" rel="noreferrer"> SportsCaster</a>.
           </p>
           <br />
           <p class="text-2xl text-slate-300 leading-relaxed tracking-wide">

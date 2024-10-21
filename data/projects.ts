@@ -6,8 +6,14 @@ export const projects = [
   //   repo: "",
   // },
   {
+    name: "SportsCaster - Video Streaming Platform",
+    url: "https://sportscaster.com?utm_source=emk.dev",
+    icon: "skill-icons:nuxtjs-dark",
+    repo: "",
+  },
+  {
     name: "TopThis! - Marketing Site",
-    url: "https://topthis.com",
+    url: "https://topthis.com?utm_source=emk.dev",
     icon: "skill-icons:nuxtjs-dark",
     repo: "",
   },
@@ -18,20 +24,8 @@ export const projects = [
     repo: "",
   },
   {
-    name: "0NEGUY Cinematics - SaaS",
-    url: "https://oneguy.io",
-    icon: "skill-icons:nuxtjs-dark",
-    repo: "",
-  },
-  {
     name: "NeedAnything - Marketing Site",
     url: "https://needanything.com/",
-    icon: "skill-icons:vuejs-dark",
-    repo: "",
-  },
-  {
-    name: "FanLabel - Web Challenges Site",
-    url: "https://challenges.fanlabel.com",
     icon: "skill-icons:vuejs-dark",
     repo: "",
   },
@@ -63,12 +57,6 @@ export const projects = [
     name: "GI Updates - Marketing Site",
     url: "https://giupdates.tv",
     icon: "skill-icons:vuejs-dark",
-    repo: "",
-  },
-  {
-    name: "Personal Site - You're looking at it",
-    url: "https://github.com/emkelley/emk.dev",
-    icon: "skill-icons:nuxtjs-dark",
     repo: "",
   },
 ];

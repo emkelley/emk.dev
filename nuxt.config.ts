@@ -23,7 +23,7 @@ export default defineNuxtConfig({
   ],
   googleFonts: {
     families: {
-      "Space+Grotesk": true,
+      "Fira+Code": true,
       Radix: true,
     },
   },

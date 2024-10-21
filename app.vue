@@ -22,7 +22,7 @@ useHead({
 <style lang="scss">
 body {
   @apply bg-slate-900;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Fira Code", sans-serif;
 }
 .rainbow {
   -webkit-animation: rainbow 8s ease infinite;
