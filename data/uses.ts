@@ -4,9 +4,9 @@ export const uses = [
     title: "Workstation",
     items: [
       {
-        title: "Dev/Gaming Machine - 12900K, RTX 3070, 32GB RAM",
+        title: "Dev/Gaming Machine - 12900K, RTX 4070 Ti SUPER, 64GB RAM",
         description:
-          "I've been gradually upgrading my computer over time, so it's kinda like a PC of Theseus now. As a developer, I've always got a bunch of servers running, Docker doing its thing in the background, and tons of browser tabs open. Moving from a 7700K to a 12900K was a huge step up, and the 3070 GPU is just awesome.",
+          "I've been gradually upgrading my computer over time, so it's kinda like a PC of Theseus now.",
       },
       {
         title: 'Alienware AW3418DW 34" (x2)',
@@ -30,7 +30,7 @@ export const uses = [
     title: "Development tools",
     items: [
       {
-        title: "Visual Studio Code",
+        title: "Cursor (Visual Studio Code)",
         description:
           "Pretty self-explanatory. I use this for everything code-related for web projects. I also made my own theme that is pretty popular, you can check it out here!",
       },

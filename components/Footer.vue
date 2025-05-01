@@ -5,7 +5,7 @@ const social = [
   {
     name: "Github",
     url: "https://github.com/emkelley",
-    icon: "skill-icons:github-dark",
+    icon: "mdi:github",
   },
   {
     name: "Codepen",
@@ -15,17 +15,17 @@ const social = [
   {
     name: "LinkedIn",
     url: "https://linkedin.com/in/ericmkelley",
-    icon: "skill-icons:linkedin",
+    icon: "famicons:logo-linkedin",
   },
   {
     name: "Threads",
     url: "https://www.threads.net/@mr.erickelley",
-    icon: "fluent-emoji-high-contrast:thread",
+    icon: "bi:threads",
   },
   {
     name: "Email",
     url: "mailto:contact@emk.dev",
-    icon: "ic:twotone-alternate-email",
+    icon: "bi:envelope-fill",
   },
 ];
 </script>

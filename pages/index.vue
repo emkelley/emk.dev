@@ -1,70 +1,74 @@
 <script setup lang="ts">
 import { projects } from "@/data/projects";
+import ThreeScene from '@/components/ThreeScene.vue';
 useSeoMeta({
   title: "Eric Kelley - Full-Stack Software Developer",
   description:
     "From payment processing to network management, I build powerful, elegant web applications that customers love to use. Currently, I’m currently helping software development stay human at Studio Cadenza.",
 });
 
-defineOgImageStatic({
-  component: "OgImage",
-  backgroundColor: "bg-gradient-to-br from-blue-950 to-blue-800",
-});
 </script>
 
 <template>
-  <main class="flex flex-col justify-center align-middle">
-    <div class="container mx-auto xl:px-24 lg:px-12 md:px-6 md:mt-24 px-3">
-      <div class="">
-        <h1 class="text-4xl md:text-6xl text-slate-100 py-8 text-center md:text-left">
+  <div>
+    
+  <ThreeScene />
+  <!-- Ensure main container fills the screen height -->
+  <main class="flex flex-col justify-center items-center min-h-screen relative z-10 p-4">
+    <!-- Increased max-width for larger screens, centered container -->
+    <div class="container max-w-4xl mx-auto xl:px-12 lg:px-8 md:px-6 px-6 py-16">
+      <div class="text-left">
+        <!-- Adjusted heading size and bottom margin -->
+        <h1 class="text-4xl sm:text-5xl md:text-7xl text-slate-100 font-bold mb-6">
           Hey there, I'm <span class="rainbow clip-text">Eric Kelley</span>
         </h1>
-        <div class="mb-24 font-light">
-          <p class="text-xl md:text-2xl text-slate-300 leading-relaxed tracking-wide">
+        <!-- Adjusted paragraph spacing and text size/weight -->
+        <div class="mb-12 space-y-4 font-normal">
+          <p class="text-lg md:text-xl text-slate-300 leading-relaxed tracking-wide">
             From payment processing to network management, I build powerful, elegant web
-            applications that customers love to use. I’m currently helping software development stay
+            applications that customers love to use. I'm currently helping software development stay
             human at
-            <a href="https://studiocadenza.co/" class="px-0" target="_blank" rel="noreferrer">
+            <a href="https://studiocadenza.co/" class="rainbow font-semibold" target="_blank" rel="noreferrer">
               Studio Cadenza</a
             >
             and leading the development of
-            <a href="https://sportscaster.com/" target="_blank" rel="noreferrer"> SportsCaster</a>.
+            <a href="https://sportscaster.com/" class="rainbow font-semibold" target="_blank" rel="noreferrer"> SportsCaster</a>.
           </p>
-          <br />
-          <p class="text-2xl text-slate-300 leading-relaxed tracking-wide">
+          <p class="text-lg md:text-xl text-slate-300 leading-relaxed tracking-wide">
             I am typically open to select freelance work, although I am not currently accepting new
             projects.
           </p>
         </div>
       </div>
-      <div class="pb-24">
-        <p
-          class="text-2xl text-slate-300 leading-relaxed tracking-wide mt-24 md:text-left text-center mb-6 font-bold"
+      <div class="pb-16">
+        <!-- Adjusted heading size/margin and alignment -->
+        <h2
+          class="text-3xl text-slate-200 leading-relaxed tracking-wide mt-12 mb-6 font-semibold md:text-left text-center"
         >
-          What I've been up to:
-        </p>
-        <div class="flex flex-row flex-wrap">
+          What I've been up to lately:
+        </h2>
+        <!-- Changed to flex column layout with gap -->
+        <div class="flex flex-col gap-3 items-start">
           <a
             v-for="project in projects"
             :key="project.url"
             :href="project.url"
             target="_blank"
             rel="noreferrer"
-            class="xl:w-1/3 md:w-1/2 w-full p-2 text-slate-50 text-lg"
+            class="p-2 text-slate-200 hover:text-slate-50 text-lg transition-colors duration-200 ease-in-out inline-flex items-center"
           >
-            <Icon :name="project.icon" class="mr-2" />
-            {{ project.name }}
+            <Icon :name="project.icon" class="mr-3 text-xl" />
+            <span class="font-medium">{{ project.name }}</span>
           </a>
         </div>
       </div>
     </div>
   </main>
+</div>
 </template>
 
 <style lang="scss" scoped>
-a {
-  @apply rainbow;
-}
+/* Removed the global 'a' style, specific links use the 'rainbow' class directly */
 .rainbow {
   -webkit-animation: rainbow 8s ease infinite;
   animation: rainbow 8s ease infinite;

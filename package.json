@@ -9,19 +9,19 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/content": "^2.6.0",
-    "@nuxt/devtools": "^0.4.6",
-    "@nuxtjs/google-fonts": "^3.0.0-1",
-    "@nuxtjs/tailwindcss": "^6.6.7",
-    "@types/node": "^18",
-    "nuxt": "^3.4.3",
-    "nuxt-icon": "^0.4.0",
-    "nuxt-og-image": "^2.0.0-beta.40"
+    "@nuxt/content": "^2.6.1",
+    "@nuxt/devtools": "^0.8.0",
+    "@nuxtjs/google-fonts": "^3.0.1",
+    "@nuxtjs/tailwindcss": "^6.10.0",
+    "@types/node": "^22.0.0",
+    "nuxt": "^3.12.0",
+    "nuxt-icon": "^0.5.0"
   },
   "dependencies": {
-    "@vueuse/core": "^10.1.2",
-    "axios": "^1.4.0",
-    "sass": "^1.62.1"
-  },
-  "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
+    "@types/three": "^0.176.0",
+    "@vueuse/core": "^11.0.0",
+    "axios": "^1.6.0",
+    "sass": "^1.69.0",
+    "three": "^0.176.0"
+  }
 }
