@@ -27,6 +27,21 @@ importers:
         specifier: ^0.176.0
         version: 0.176.0
     devDependencies:
+      '@iconify-json/bi':
+        specifier: ^1.2.7
+        version: 1.2.7
+      '@iconify-json/famicons':
+        specifier: ^1.2.2
+        version: 1.2.2
+      '@iconify-json/ion':
+        specifier: ^1.2.7
+        version: 1.2.7
+      '@iconify-json/mdi':
+        specifier: ^1.2.3
+        version: 1.2.3
+      '@iconify-json/skill-icons':
+        specifier: ^1.2.4
+        version: 1.2.4
       '@nuxt/fonts':
         specifier: ^0.14.0
         version: 0.14.0(@netlify/blobs@8.2.0)(db0@0.3.4)(esbuild@0.28.2)(ioredis@5.11.1)(magic-string@1.2.0)(magicast@0.5.4)(rolldown@1.2.4)(rollup@4.62.4)(vite@8.2.1(@types/node@22.15.3)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.4)(yaml@2.9.0))
@@ -734,6 +749,21 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@iconify-json/bi@1.2.7':
+    resolution: {integrity: sha512-IPz8WNxmLkH1I9msl+0Q4OnmjjvP4uU0Z61a4i4sqonB6vKSbMGUWuGn8/YuuszlReVj8rf+3gNv5JU8Xoljyg==}
+
+  '@iconify-json/famicons@1.2.2':
+    resolution: {integrity: sha512-mFgrUk2CYKeFe9EHh6XWdtVDkX344OTb3E6X7RaOp6iwW9saJH/kknNFZRZ2UFQCcFl3RNSTN6IRpCRsRppFxw==}
+
+  '@iconify-json/ion@1.2.7':
+    resolution: {integrity: sha512-ZJNG5kLCbTPr68mdP0jx6Q3lB9AMEQKO2+VvIjuJ2llGFICBLD+cvESn/qGDRIqSfk2D3PrFMf/Qg8WKIUV7cg==}
+
+  '@iconify-json/mdi@1.2.3':
+    resolution: {integrity: sha512-O3cLwbDOK7NNDf2ihaQOH5F9JglnulNDFV7WprU2dSoZu3h3cWH//h74uQAB87brHmvFVxIOkuBX2sZSzYhScg==}
+
+  '@iconify-json/skill-icons@1.2.4':
+    resolution: {integrity: sha512-S6iRKHGlGCb/zfx3Isv1TBe5PunbDE5FEwJcaXji60+yRZMrcFFtYEI1xivKqaGKXyVZ508yjGDItsehQdJmSg==}
 
   '@iconify/collections@1.0.724':
     resolution: {integrity: sha512-wl26lugNV8a3z1bsJyNceAnGeOCrvkXdZmw1Yvs40qLlz90EzMYPYA2OLFITzC9ALx6Ar3vyzEKo7ZNNKw0zjg==}
@@ -4920,6 +4950,26 @@ snapshots:
 
   '@esbuild/win32-x64@0.28.2':
     optional: true
+
+  '@iconify-json/bi@1.2.7':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/famicons@1.2.2':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/ion@1.2.7':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/mdi@1.2.3':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/skill-icons@1.2.4':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify/collections@1.0.724':
     dependencies:
