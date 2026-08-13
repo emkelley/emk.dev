@@ -53,6 +53,14 @@ watch(
           Home
         </nuxt-link>
         <nuxt-link
+          to="/tools"
+          class="nav-link"
+          :class="{ 'is-active': isActive('/tools') }"
+          @click="closeMenu"
+        >
+          Tools
+        </nuxt-link>
+        <nuxt-link
           to="/uses"
           class="nav-link"
           :class="{ 'is-active': isActive('/uses') }"

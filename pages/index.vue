@@ -67,7 +67,14 @@ useSeoMeta({
   gap: 2.5rem;
   width: 100%;
   max-width: 72rem;
-  padding: 6.5rem 1.25rem 7rem;
+  margin-inline: auto;
+  padding: 6.5rem 1rem 7rem;
+}
+
+@media (min-width: 768px) {
+  .stage {
+    padding-inline: 2rem;
+  }
 }
 
 @media (min-width: 960px) {
@@ -76,7 +83,7 @@ useSeoMeta({
     grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 0.85fr);
     align-items: start;
     gap: 4rem 5rem;
-    padding: 7rem 2.5rem 7rem;
+    padding-top: 7rem;
   }
 }
 
@@ -120,7 +127,7 @@ useSeoMeta({
 .lede a {
   color: var(--ink);
   text-decoration: underline;
-  text-decoration-color: var(--magenta);
+  text-decoration-color: var(--cyan);
   text-underline-offset: 3px;
   text-decoration-thickness: 1.5px;
   transition: color 120ms ease, text-decoration-color 120ms ease, transform 140ms var(--ease-out);
@@ -149,13 +156,13 @@ useSeoMeta({
   align-items: flex-start;
   gap: 0.2rem;
   padding: 0.95rem 0;
-  border-top: 1px solid rgba(200, 156, 255, 0.18);
+  border-top: 1px solid rgba(142, 182, 232, 0.18);
   color: var(--ink);
   transition: transform 140ms var(--ease-out), border-color 180ms var(--ease-out);
 }
 
 .work-card:last-child {
-  border-bottom: 1px solid rgba(200, 156, 255, 0.18);
+  border-bottom: 1px solid rgba(142, 182, 232, 0.18);
 }
 
 .work-card:active {
@@ -177,7 +184,7 @@ useSeoMeta({
   font-size: 0.65rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--magenta);
+  color: var(--cyan);
 }
 
 .work-name {

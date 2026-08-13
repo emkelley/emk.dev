@@ -3,14 +3,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        void: "#0c0020",
-        deep: "#040015",
-        ink: "#dbd4fa",
-        muted: "#8e85b0",
+        void: "#07111c",
+        deep: "#030810",
+        ink: "#d5deef",
+        muted: "#7d8ba0",
         cyan: "#24cdc5",
-        magenta: "#ff7edb",
+        magenta: "#4d9fff",
         coral: "#f97e72",
-        violet: "#c89cff",
+        violet: "#8eb6e8",
       },
       fontFamily: {
         display: ['"Saira Extra Condensed"', "sans-serif"],
