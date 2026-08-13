@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npx nuxt typecheck:*)",
+      "Bash(npx nuxt dev:*)",
+      "Bash(npx nuxt build)",
+      "Bash(curl:*)"
+    ]
+  }
+}

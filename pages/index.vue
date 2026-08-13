@@ -1,106 +1,250 @@
 <script setup lang="ts">
 import { projects } from "@/data/projects";
-import ThreeScene from '@/components/ThreeScene.vue';
-useSeoMeta({
-  title: "Eric Kelley - Full-Stack Software Developer",
-  description:
-    "From payment processing to network management, I build powerful, elegant web applications that customers love to use. Currently, I’m currently helping software development stay human at Studio Cadenza.",
-});
 
+useSeoMeta({
+  title: "Eric Kelley",
+  description:
+    "I build products people actually use, and the tools I wish existed at 1am. Leading TopCar and SportsCaster. Helping software stay human at Studio Cadenza.",
+});
 </script>
 
 <template>
-  <div>
-    
-  <ThreeScene />
-  <!-- Ensure main container fills the screen height -->
-  <main class="flex flex-col justify-center items-center min-h-screen relative z-10 p-4">
-    <!-- Increased max-width for larger screens, centered container -->
-    <div class="container max-w-4xl mx-auto xl:px-12 lg:px-8 md:px-6 px-6 py-16">
-      <div class="text-left">
-        <!-- Adjusted heading size and bottom margin -->
-        <h1 class="text-4xl sm:text-5xl md:text-7xl text-slate-100 font-bold mb-6">
-          Hey there, I'm <span class="rainbow clip-text">Eric Kelley</span>
-        </h1>
-        <!-- Adjusted paragraph spacing and text size/weight -->
-        <div class="mb-12 space-y-4 font-normal">
-          <p class="text-lg md:text-xl text-slate-300 leading-relaxed tracking-wide">
-            From payment processing to network management, I build powerful, elegant web
-            applications that customers love to use. I'm currently helping software development stay
-            human at
-            <a href="https://studiocadenza.co/" class="rainbow font-semibold" target="_blank" rel="noreferrer">
-              Studio Cadenza</a
-            >
-            and leading the development of
-            <a href="https://sportscaster.com/" class="rainbow font-semibold" target="_blank" rel="noreferrer"> SportsCaster</a>.
-          </p>
-          <p class="text-lg md:text-xl text-slate-300 leading-relaxed tracking-wide">
-            I am typically open to select freelance work, although I am not currently accepting new
-            projects.
-          </p>
-        </div>
+  <div class="home">
+    <ClientOnly>
+      <ThreeScene />
+    </ClientOnly>
+
+    <main class="stage">
+      <div class="intro">
+        <p class="enter enter-1 eyebrow">emk.dev</p>
+        <h1 class="enter enter-2 name">Eric Kelley</h1>
+        <p class="enter enter-3 thesis">
+          I build products people actually use, and the tools I wish existed at 1am.
+        </p>
+        <p class="enter enter-4 lede">
+          Leading
+          <a href="https://top.car/" target="_blank" rel="noreferrer">TopCar</a>
+          and
+          <a href="https://sportscaster.com/" target="_blank" rel="noreferrer">SportsCaster</a>.
+          Helping software stay human at
+          <a href="https://studiocadenza.co/" target="_blank" rel="noreferrer">Studio Cadenza</a>.
+        </p>
       </div>
-      <div class="pb-16">
-        <!-- Adjusted heading size/margin and alignment -->
-        <h2
-          class="text-3xl text-slate-200 leading-relaxed tracking-wide mt-12 mb-6 font-semibold md:text-left text-center"
+
+      <div class="enter enter-5 work">
+        <a
+          v-for="project in projects"
+          :key="project.url"
+          :href="project.url"
+          target="_blank"
+          rel="noreferrer"
+          class="work-card"
         >
-          What I've been up to lately:
-        </h2>
-        <!-- Changed to flex column layout with gap -->
-        <div class="flex flex-col gap-3 items-start">
-          <a
-            v-for="project in projects"
-            :key="project.url"
-            :href="project.url"
-            target="_blank"
-            rel="noreferrer"
-            class="p-2 text-slate-200 hover:text-slate-50 text-lg transition-colors duration-200 ease-in-out inline-flex items-center"
-          >
-            <Icon :name="project.icon" class="mr-3 text-xl" />
-            <span class="font-medium">{{ project.name }}</span>
-          </a>
-        </div>
+          <span class="work-tag">{{ project.tag }}</span>
+          <span class="work-name">{{ project.name }}</span>
+          <span class="work-desc">{{ project.description }}</span>
+        </a>
       </div>
-    </div>
-  </main>
-</div>
+    </main>
+  </div>
 </template>
 
 <style lang="scss" scoped>
-/* Removed the global 'a' style, specific links use the 'rainbow' class directly */
-.rainbow {
-  -webkit-animation: rainbow 8s ease infinite;
-  animation: rainbow 8s ease infinite;
-  background-image: linear-gradient(124deg, #ff470f, #ff3860, #b86bff, #3273dc);
-  background-size: 800% 800%;
-  font-weight: bold;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.home {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-@-webkit-keyframes rainbow {
-  0% {
-    background-position: 1% 80%;
-  }
-  50% {
-    background-position: 99% 20%;
-  }
-  100% {
-    background-position: 1% 80%;
+.stage {
+  position: relative;
+  z-index: 10;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 72rem;
+  padding: 6.5rem 1.25rem 7rem;
+}
+
+@media (min-width: 960px) {
+  .stage {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 0.85fr);
+    align-items: start;
+    gap: 4rem 5rem;
+    padding: 7rem 2.5rem 7rem;
   }
 }
 
-@keyframes rainbow {
-  0% {
-    background-position: 1% 80%;
+.eyebrow {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 0.75rem;
+}
+
+.name {
+  font-family: "Saira Extra Condensed", sans-serif;
+  font-weight: 800;
+  font-size: clamp(3.5rem, 11vw, 6.75rem);
+  line-height: 0.84;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 1.1rem;
+}
+
+.thesis {
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink);
+  margin: 0 0 0.85rem;
+  max-width: 32rem;
+}
+
+.lede {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--muted);
+  margin: 0;
+  max-width: 32rem;
+}
+
+.lede a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--magenta);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+  transition: color 120ms ease, text-decoration-color 120ms ease, transform 140ms var(--ease-out);
+}
+
+.lede a:active {
+  transform: scale(0.97);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .lede a:hover {
+    color: var(--cyan);
+    text-decoration-color: var(--cyan);
   }
-  50% {
-    background-position: 99% 20%;
+}
+
+.work {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.work-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  padding: 0.95rem 0;
+  border-top: 1px solid rgba(200, 156, 255, 0.18);
+  color: var(--ink);
+  transition: transform 140ms var(--ease-out), border-color 180ms var(--ease-out);
+}
+
+.work-card:last-child {
+  border-bottom: 1px solid rgba(200, 156, 255, 0.18);
+}
+
+.work-card:active {
+  transform: scale(0.97);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .work-card:hover {
+    border-color: var(--cyan);
   }
-  100% {
-    background-position: 1% 80%;
+
+  .work-card:hover .work-name {
+    color: var(--cyan);
+  }
+}
+
+.work-tag {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--magenta);
+}
+
+.work-name {
+  font-family: "Saira Extra Condensed", sans-serif;
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+  transition: color 180ms var(--ease-out);
+}
+
+.work-desc {
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+
+.enter {
+  animation: enter 220ms var(--ease-out) both;
+}
+
+.enter-1 {
+  animation-delay: 0ms;
+}
+.enter-2 {
+  animation-delay: 50ms;
+}
+.enter-3 {
+  animation-delay: 100ms;
+}
+.enter-4 {
+  animation-delay: 150ms;
+}
+.enter-5 {
+  animation-delay: 200ms;
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .enter {
+    animation: enter-fade 200ms var(--ease-out) both;
+  }
+
+  @keyframes enter-fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .lede a:active,
+  .work-card:active {
+    transform: none;
   }
 }
 </style>

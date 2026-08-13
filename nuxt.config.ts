@@ -13,28 +13,19 @@ export default defineNuxtConfig({
       ],
     },
   },
+  css: ["~/assets/css/tailwind.css"],
   modules: [
     "@nuxt/devtools",
     "@nuxtjs/tailwindcss",
     "@nuxtjs/google-fonts",
-    "@nuxt/content",
     "nuxt-icon",
   ],
   googleFonts: {
+    display: "swap",
     families: {
-      "Fira+Code": true,
-      Radix: true,
-    },
-  },
-  content: {
-    markdown: {
-      toc: {
-        depth: 3,
-        searchDepth: 3,
-      },
-    },
-    highlight: {
-      theme: "dracula-soft",
+      "Saira Extra Condensed": [600, 700, 800],
+      "Source Sans 3": [400, 500, 600, 700],
+      "IBM Plex Mono": [400, 500],
     },
   },
   runtimeConfig: {

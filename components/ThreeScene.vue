@@ -3,78 +3,94 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
-import * as THREE from 'three';
+import { ref, onMounted, onUnmounted } from "vue";
+import * as THREE from "three";
 
 const container = ref<HTMLDivElement | null>(null);
+
 let renderer: THREE.WebGLRenderer | null = null;
 let animationFrameId: number | null = null;
 let clock: THREE.Clock | null = null;
-let originalPositions: THREE.Float32BufferAttribute | null = null;
 let starField: THREE.Points | null = null;
 let starGeometry: THREE.BufferGeometry | null = null;
 let starMaterial: THREE.PointsMaterial | null = null;
+let camera: THREE.PerspectiveCamera | null = null;
 
-// Mouse position state
-const mouse = ref({ x: 0, y: 0 });
-// Mouse click state
-const isMouseDown = ref(false);
+const mouse = { x: 0, y: 0 };
+let isMouseDown = false;
+let reduceMotion = false;
 
 const handleMouseMove = (event: MouseEvent) => {
-  if (container.value) {
-    // Normalize mouse position to range [-0.5, 0.5]
-    mouse.value.x = (event.clientX / window.innerWidth) - 0.5;
-    mouse.value.y = (event.clientY / window.innerHeight) - 0.5;
-  }
+  mouse.x = event.clientX / window.innerWidth - 0.5;
+  mouse.y = event.clientY / window.innerHeight - 0.5;
 };
 
-// Handle mouse down
 const handleMouseDown = () => {
-  isMouseDown.value = true;
+  isMouseDown = true;
 };
 
-// Handle mouse up
 const handleMouseUp = () => {
-  isMouseDown.value = false;
+  isMouseDown = false;
+};
+
+const handleResize = () => {
+  if (!container.value || !renderer || !camera) return;
+  const width = container.value.clientWidth;
+  const height = container.value.clientHeight;
+  camera.aspect = width / height;
+  camera.updateProjectionMatrix();
+  renderer.setSize(width, height);
+};
+
+const dispose = () => {
+  window.removeEventListener("resize", handleResize);
+  window.removeEventListener("mousemove", handleMouseMove);
+  window.removeEventListener("mousedown", handleMouseDown);
+  window.removeEventListener("mouseup", handleMouseUp);
+  if (animationFrameId) cancelAnimationFrame(animationFrameId);
+  starGeometry?.dispose();
+  starMaterial?.dispose();
+  renderer?.dispose();
+  if (renderer?.domElement.parentNode) {
+    renderer.domElement.parentNode.removeChild(renderer.domElement);
+  }
+  renderer = null;
+  starField = null;
+  starGeometry = null;
+  starMaterial = null;
+  camera = null;
+  clock = null;
 };
 
 const initThree = () => {
   if (!container.value) return;
 
-  // Scene
-  const scene = new THREE.Scene();
+  reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Camera
-  const camera = new THREE.PerspectiveCamera(75, container.value.clientWidth / container.value.clientHeight, 0.1, 1000);
+  const scene = new THREE.Scene();
+  camera = new THREE.PerspectiveCamera(
+    75,
+    container.value.clientWidth / container.value.clientHeight,
+    0.1,
+    1000
+  );
   camera.position.z = 5;
 
-  // Renderer
   renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   renderer.setSize(container.value.clientWidth, container.value.clientHeight);
-  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   container.value.appendChild(renderer.domElement);
 
-  // Lighting
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-  scene.add(ambientLight);
-
-  const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-  directionalLight.position.set(5, 5, 5).normalize();
-  scene.add(directionalLight);
-
-  // Starfield
   starGeometry = new THREE.BufferGeometry();
-  const starCount = 1500; // Reduced star count
+  const starCount = 1500;
   const starPositions = new Float32Array(starCount * 3);
   const starColors = new Float32Array(starCount * 3);
 
   for (let i = 0; i < starCount; i++) {
     const i3 = i * 3;
-
-    // Position stars in a large cube volume
     starPositions[i3] = (Math.random() - 0.5) * 100;
     starPositions[i3 + 1] = (Math.random() - 0.5) * 100;
-    starPositions[i3 + 2] = (Math.random() - 1) * 100; // Spread mostly in front
+    starPositions[i3 + 2] = (Math.random() - 1) * 100;
 
     const colorVariance = Math.random() * 0.2 + 0.8;
     starColors[i3] = colorVariance;
@@ -82,107 +98,63 @@ const initThree = () => {
     starColors[i3 + 2] = colorVariance;
   }
 
-  starGeometry.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
-  starGeometry.setAttribute('color', new THREE.BufferAttribute(starColors, 3));
+  starGeometry.setAttribute("position", new THREE.BufferAttribute(starPositions, 3));
+  starGeometry.setAttribute("color", new THREE.BufferAttribute(starColors, 3));
 
   starMaterial = new THREE.PointsMaterial({
-    size: 0.04, // Reduced size
+    size: 0.04,
     sizeAttenuation: true,
     vertexColors: true,
     transparent: true,
-    opacity: 0.6 // Reduced opacity
+    opacity: 0.6,
   });
 
   starField = new THREE.Points(starGeometry, starMaterial);
   scene.add(starField);
 
-  // Clock for animation timing
   clock = new THREE.Clock();
 
-  // Animation loop
   const animate = () => {
     animationFrameId = requestAnimationFrame(animate);
 
-    const delta = clock?.getDelta() ?? 0.016;
-    // const elapsedTime = clock?.getElapsedTime() ?? 0;
+    if (starField && camera && !reduceMotion) {
+      const delta = clock?.getDelta() ?? 0.016;
+      const starSpeed = isMouseDown ? 10 : 2;
+      const positions = starField.geometry.attributes.position as THREE.BufferAttribute;
 
-    // Determine animation speed based on mouse click state
-    const normalSpeed = 2;
-    const acceleratedSpeed = 10;
-    const starSpeed = isMouseDown.value ? acceleratedSpeed : normalSpeed;
-
-    if (starField) {
-      const starPositionsAttr = starField.geometry.attributes.position as THREE.BufferAttribute;
-
-      for (let i = 0; i < starPositionsAttr.count; i++) {
-        const z = starPositionsAttr.getZ(i);
-
-        // Move star towards camera
-        let newZ = z + starSpeed * delta;
-
-        // If star moved past camera, reset its position far away
+      for (let i = 0; i < positions.count; i++) {
+        let newZ = positions.getZ(i) + starSpeed * delta;
         if (newZ > camera.position.z) {
-          newZ = Math.random() * -50 - 50; // Reset far behind the initial spread
+          newZ = Math.random() * -50 - 50;
         }
-        starPositionsAttr.setZ(i, newZ);
+        positions.setZ(i, newZ);
       }
-      starPositionsAttr.needsUpdate = true;
+      positions.needsUpdate = true;
 
-      // Parallax effect
-      const parallaxFactor = 0.5;
-      starField.rotation.y = mouse.value.x * parallaxFactor;
-      starField.rotation.x = mouse.value.y * parallaxFactor;
+      starField.rotation.y = mouse.x * 0.5;
+      starField.rotation.x = mouse.y * 0.5;
     }
 
-    renderer?.render(scene, camera);
+    renderer?.render(scene, camera!);
   };
 
   animate();
 
-  // Handle Resize
-  const handleResize = () => {
-    if (container.value && renderer) {
-      const width = container.value.clientWidth;
-      const height = container.value.clientHeight;
-      camera.aspect = width / height;
-      camera.updateProjectionMatrix();
-      renderer.setSize(width, height);
-    }
-  };
-
-  window.addEventListener('resize', handleResize);
-  window.addEventListener('mousemove', handleMouseMove); // Add mouse listener
-  window.addEventListener('mousedown', handleMouseDown); // Add mouse down listener
-  window.addEventListener('mouseup', handleMouseUp);   // Add mouse up listener
-
-  // Cleanup on unmount
-  onUnmounted(() => {
-    window.removeEventListener('resize', handleResize);
-    window.removeEventListener('mousemove', handleMouseMove); // Remove mouse listener
-    window.removeEventListener('mousedown', handleMouseDown); // Remove mouse down listener
-    window.removeEventListener('mouseup', handleMouseUp);   // Remove mouse up listener
-    if (animationFrameId) {
-      cancelAnimationFrame(animationFrameId);
-    }
-    if (renderer) {
-      renderer.dispose();
-      if (renderer.domElement.parentNode) {
-        renderer.domElement.parentNode.removeChild(renderer.domElement);
-      }
-    }
-    if (starGeometry) starGeometry.dispose();
-    if (starMaterial) starMaterial.dispose();
-    originalPositions = null; // Clear reference
-    starField = null; // Clear reference
-  });
+  window.addEventListener("resize", handleResize);
+  if (!reduceMotion) {
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousedown", handleMouseDown);
+    window.addEventListener("mouseup", handleMouseUp);
+  }
 };
 
 onMounted(() => {
-  if (typeof window !== 'undefined') {
-    initThree();
-  }
+  if (typeof window !== "undefined") initThree();
 });
 
+onUnmounted(() => {
+  dispose();
+});
 </script>
 
 <style scoped>
@@ -192,6 +164,7 @@ div {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -1;
+  z-index: 0;
+  pointer-events: none;
 }
 </style>

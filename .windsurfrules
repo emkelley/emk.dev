@@ -1,6 +1,0 @@
-1. This is my personal portfolio website
-2. This is made with Vue 3 and the Nuxt framework
-3. Use script setup with TypeScript for components and pages
-4. Use tailwind css for styling
-5. Use pnpm for package management
-6. You do not need to start the dev server again after every change, I have it running all the time

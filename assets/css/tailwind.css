@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --void: #0c0020;
+  --deep: #040015;
+  --ink: #dbd4fa;
+  --muted: #8e85b0;
+  --cyan: #24cdc5;
+  --magenta: #ff7edb;
+  --coral: #f97e72;
+  --violet: #c89cff;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@layer base {
+  html,
+  body {
+    min-height: 100%;
+    background: var(--void);
+    color: var(--ink);
+    font-family: "Source Sans 3", sans-serif;
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 3px;
+  }
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #614d85 var(--deep);
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--deep);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #614d85;
+  border-radius: 2px;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition:
+    opacity 200ms var(--ease-out),
+    transform 200ms var(--ease-out);
+}
+
+.page-leave-active {
+  transition-duration: 160ms;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter-active,
+  .page-leave-active {
+    transition: opacity 160ms var(--ease-out);
+  }
+
+  .page-enter-from,
+  .page-leave-to {
+    transform: none;
+  }
+}
