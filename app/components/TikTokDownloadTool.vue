@@ -196,6 +196,9 @@ function downloadFile() {
         >
           Download MP4
         </button>
+        <nuxt-link to="/tools/video-clip" class="ghost-btn clip-link">
+          Then clip it
+        </nuxt-link>
         <p class="privacy">
           The link goes through this site so TikTok's CDN will talk to us. The file is not kept.
         </p>
@@ -394,6 +397,7 @@ function downloadFile() {
 }
 
 .primary,
+.ghost-btn,
 .text-btn {
   transition: color 120ms ease, background-color 120ms ease, border-color 120ms ease,
     transform 140ms var(--ease-out);
@@ -408,6 +412,19 @@ function downloadFile() {
   text-transform: uppercase;
   background: var(--cyan);
   color: var(--deep);
+}
+
+.ghost-btn,
+.clip-link {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  border: 1px solid rgba(142, 182, 232, 0.28);
+  color: var(--ink);
 }
 
 .drop .primary {
@@ -430,13 +447,22 @@ function downloadFile() {
 }
 
 .primary:active:not(:disabled),
+.ghost-btn:active,
+.clip-link:active,
 .text-btn:active {
   transform: scale(0.97);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .text-btn:hover {
+  .text-btn:hover,
+  .ghost-btn:hover,
+  .clip-link:hover {
     color: var(--ink);
+    border-color: var(--ink);
+  }
+
+  .text-btn:hover {
+    border-color: transparent;
   }
 
   .primary:hover:not(:disabled) {
@@ -446,11 +472,15 @@ function downloadFile() {
 
 @media (prefers-reduced-motion: reduce) {
   .primary,
+  .ghost-btn,
+  .clip-link,
   .text-btn {
     transition: color 120ms ease, background-color 120ms ease, border-color 120ms ease;
   }
 
   .primary:active:not(:disabled),
+  .ghost-btn:active,
+  .clip-link:active,
   .text-btn:active {
     transform: none;
   }

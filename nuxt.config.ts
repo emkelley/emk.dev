@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  compatibilityDate: "2026-08-13",
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     head: {
@@ -14,28 +15,15 @@ export default defineNuxtConfig({
     },
   },
   css: ["~/assets/css/tailwind.css"],
-  modules: [
-    "@nuxt/devtools",
-    "@nuxtjs/tailwindcss",
-    "@nuxtjs/google-fonts",
-    "nuxt-icon",
-  ],
-  googleFonts: {
-    display: "swap",
-    families: {
-      "Saira Extra Condensed": [600, 700, 800],
-      "Source Sans 3": [400, 500, 600, 700],
-      "IBM Plex Mono": [400, 500],
-    },
+  modules: ["@nuxtjs/tailwindcss", "@nuxt/fonts", "@nuxt/icon"],
+  tailwindcss: {
+    cssPath: "~/assets/css/tailwind.css",
   },
   runtimeConfig: {
-    // Private keys are only available on the server
     spotifyClient: process.env.SPOTIFY_CLIENT,
     spotifySecret: process.env.SPOTIFY_SECRET,
     spotifyRefreshToken: process.env.SPOTIFY_REFRESH,
     spotifyAccessToken: process.env.SPOTIFY_ACCESS,
-
-    // Public keys that are exposed to the client
     public: {},
   },
 });

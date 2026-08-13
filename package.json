@@ -2,24 +2,24 @@
   "name": "nuxt-app",
   "private": true,
   "scripts": {
-    "build": "nuxt build --modern=client",
+    "build": "nuxt build",
     "dev": "nuxt dev -o",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^0.8.0",
-    "@nuxtjs/google-fonts": "^3.0.1",
-    "@nuxtjs/tailwindcss": "^6.10.0",
+    "@nuxt/fonts": "^0.14.0",
+    "@nuxt/icon": "^2.0.0",
+    "@nuxtjs/tailwindcss": "^6.14.0",
     "@types/node": "^22.0.0",
-    "nuxt": "^3.12.0",
-    "nuxt-icon": "^0.5.0"
+    "nuxt": "^4.5.0"
   },
   "dependencies": {
     "@types/three": "^0.176.0",
     "@vueuse/core": "^11.0.0",
     "axios": "^1.6.0",
+    "gifenc": "^1.0.3",
     "sass": "^1.69.0",
     "three": "^0.176.0"
   }

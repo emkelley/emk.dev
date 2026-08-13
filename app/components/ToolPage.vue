@@ -1,8 +1,19 @@
 <script setup lang="ts">
+const props = withDefaults(
+  defineProps<{
+    eyebrow: string;
+    heading: string;
+    lede: string;
+    seoTitle: string;
+    seoDescription: string;
+    fallback?: string;
+  }>(),
+  { fallback: "Opening the bench…" }
+);
+
 useSeoMeta({
-  title: "SVG Export - Eric Kelley",
-  description:
-    "Rasterize an SVG to PNG, WebP, or AVIF in the browser. Pick the size, squeeze the file.",
+  title: props.seoTitle,
+  description: props.seoDescription,
 });
 </script>
 
@@ -10,18 +21,15 @@ useSeoMeta({
   <div class="page">
     <header class="intro">
       <nuxt-link to="/tools" class="back">Tools</nuxt-link>
-      <p class="eyebrow">SVG Export</p>
-      <h1 class="title">Vector in. Tight raster out.</h1>
-      <p class="lede">
-        Drop an SVG, pick PNG, WebP, or AVIF, then set the size and squeeze.
-        Everything stays on this page.
-      </p>
+      <p class="eyebrow">{{ eyebrow }}</p>
+      <h1 class="title">{{ heading }}</h1>
+      <p class="lede">{{ lede }}</p>
     </header>
 
     <ClientOnly>
-      <SvgExportTool />
+      <slot />
       <template #fallback>
-        <p class="fallback">Opening the press…</p>
+        <p class="fallback">{{ fallback }}</p>
       </template>
     </ClientOnly>
   </div>
