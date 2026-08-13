@@ -3,7 +3,7 @@ import { tools } from "@/data/tools";
 
 useSeoMeta({
   title: "Tools - Eric Kelley",
-  description: "Small utilities I built because I needed them. Start with SVG Export.",
+  description: "Small utilities I built because I needed them.",
 });
 </script>
 
@@ -13,7 +13,7 @@ useSeoMeta({
       <p class="enter enter-1 eyebrow">Tools</p>
       <h1 class="enter enter-2 title">The ones I wish existed at 1am.</h1>
       <p class="enter enter-3 lede">
-        Small utilities that run in your browser. No accounts. No upload to a server.
+        Small utilities. No accounts. Most of them never leave this page.
       </p>
     </header>
 
