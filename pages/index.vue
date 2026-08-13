@@ -4,7 +4,7 @@ import { projects } from "@/data/projects";
 useSeoMeta({
   title: "Eric Kelley",
   description:
-    "I build products people actually use, and the tools I wish existed at 1am. Leading TopCar and SportsCaster. Helping software stay human at Studio Cadenza.",
+    "I build products people come back to, and the tools I wish existed at 1am. Leading TopCar and SportsCaster. Helping software stay human at Studio Cadenza.",
 });
 </script>
 
@@ -16,22 +16,21 @@ useSeoMeta({
 
     <main class="stage">
       <div class="intro">
-        <p class="enter enter-1 eyebrow">emk.dev</p>
-        <h1 class="enter enter-2 name">Eric Kelley</h1>
-        <p class="enter enter-3 thesis">
-          I build products people actually use, and the tools I wish existed at 1am.
+        <h1 class="enter enter-1 name">Eric Kelley</h1>
+        <p class="enter enter-2 thesis">
+          I build products people come back to, and the tools I wish existed at 1am.
         </p>
-        <p class="enter enter-4 lede">
+        <p class="enter enter-3 lede">
           Leading
           <a href="https://top.car/" target="_blank" rel="noreferrer">TopCar</a>
           and
           <a href="https://sportscaster.com/" target="_blank" rel="noreferrer">SportsCaster</a>.
           Helping software stay human at
-          <a href="https://studiocadenza.co/" target="_blank" rel="noreferrer">Studio Cadenza</a>.
+          <a href="https://studiocadenza.co/" target="_blank" rel="noreferrer">Studio&nbsp;Cadenza</a>.
         </p>
       </div>
 
-      <div class="enter enter-5 work">
+      <div class="enter enter-4 work">
         <a
           v-for="project in projects"
           :key="project.url"
@@ -87,15 +86,6 @@ useSeoMeta({
   }
 }
 
-.eyebrow {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--cyan);
-  margin-bottom: 0.75rem;
-}
-
 .name {
   font-family: "Saira Extra Condensed", sans-serif;
   font-weight: 800;
@@ -121,7 +111,7 @@ useSeoMeta({
   line-height: 1.55;
   color: var(--muted);
   margin: 0;
-  max-width: 32rem;
+  max-width: 38rem;
 }
 
 .lede a {
@@ -219,9 +209,6 @@ useSeoMeta({
 }
 .enter-4 {
   animation-delay: 150ms;
-}
-.enter-5 {
-  animation-delay: 200ms;
 }
 
 @keyframes enter {
